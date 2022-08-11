@@ -125,7 +125,7 @@ export const AddPost = () => {
           </Button>
           <img
             className={styles.image}
-            src={`https://sinedviper-blog.herokuapp.com/${imageUrl}`}
+            src={`https://sinedviper-blog.herokuapp.com${imageUrl}`}
             alt="Uploaded"
           />
         </>

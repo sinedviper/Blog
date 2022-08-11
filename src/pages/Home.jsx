@@ -81,7 +81,7 @@ export const Home = () => {
                       title={obj.title}
                       imageUrl={
                         obj.imageUrl
-                          ? `https://sinedviper-blog.herokuapp.com/${obj.imageUrl}`
+                          ? `https://sinedviper-blog.herokuapp.com${obj.imageUrl}`
                           : ""
                       }
                       user={obj.user}
@@ -103,7 +103,7 @@ export const Home = () => {
                     title={obj.title}
                     imageUrl={
                       obj.imageUrl
-                        ? `https://sinedviper-blog.herokuapp.com/${obj.imageUrl}`
+                        ? `https://sinedviper-blog.herokuapp.com${obj.imageUrl}`
                         : ""
                     }
                     user={obj.user}
