@@ -7,8 +7,13 @@ import {
   registerValidation,
   loginValidation,
   postCreateValidation,
+  commentValidation,
 } from "./validations.js";
-import { UserController, PostController } from "./controllers/index.js";
+import {
+  UserController,
+  PostController,
+  CommnetController,
+} from "./controllers/index.js";
 import { handleValidationErrors, checkAuth } from "./utils/index.js";
 
 mongoose
@@ -53,13 +58,22 @@ app.post(
 );
 app.get("/auth/me", checkAuth, UserController.getMe);
 
-app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
+app.post("/upload", checkAuth, upload.single("image"), (req, res) =>
   res.json({
-    url: `/uploads/${req.file.originalname}`,
-  });
-});
+    url: `/upload/${req.file.originalname}`,
+  })
+);
+
+app.get("/tags", PostController.getLastTags);
+
+app.get("/comments", CommnetController.getAllComments);
+app.get("/comments/:id", CommnetController.getCommentsPost);
+app.post("/comment", checkAuth, commentValidation, CommnetController.create);
 
 app.get("/posts", PostController.getAll);
+app.get("/posts/popular", PostController.getAllPopular);
+app.get("/posts/tag/:tag", PostController.getAllPostTags);
+app.get("/posts/tags", PostController.getLastTags);
 app.get("/posts/:id", PostController.getOne);
 app.post(
   "/posts",
