@@ -28,8 +28,12 @@ export const Home = () => {
   const isCommentsLoading = comments.status === "loading";
 
   const commentsView = (id) => {
+    console.log(comments);
     return comments.items
       .map((obj) => {
+        if (obj.post === null) {
+          return undefined;
+        }
         return obj.post._id === id ? obj : undefined;
       })
       .filter((obj) => obj !== undefined).length;
