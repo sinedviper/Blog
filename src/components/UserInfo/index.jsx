@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./UserInfo.module.scss";
+import avatar from "./avatar.png";
 
 export const UserInfo = ({ avatarUrl, fullName, additionalText }) => {
   return (
     <div className={styles.root}>
       <img
         className={styles.avatar}
-        src={avatarUrl === "" ? "./noavatar.png" : avatarUrl}
+        src={avatarUrl === undefined ? avatar : avatarUrl}
         alt={fullName}
       />
       <div className={styles.userDetails}>

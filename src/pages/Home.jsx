@@ -28,7 +28,6 @@ export const Home = () => {
   const isCommentsLoading = comments.status === "loading";
 
   const commentsView = (id) => {
-    console.log(comments);
     return comments.items
       .map((obj) => {
         if (obj.post === null) {
@@ -59,13 +58,13 @@ export const Home = () => {
         aria-label="basic tabs example"
       >
         <Tab
-          label="Новые"
+          label="New"
           onClick={() => {
             setBlock(0);
           }}
         />
         <Tab
-          label="Популярные"
+          label="Popular"
           onClick={() => {
             setBlock(1);
           }}

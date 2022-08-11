@@ -34,7 +34,7 @@ export const Index = (obj) => {
         <Avatar classes={{ root: styles.avatar }} src={obj.obj.avatar} />
         <div className={styles.form}>
           <TextField
-            label="Написать комментарий"
+            label="Write a comment"
             variant="outlined"
             maxRows={10}
             multiline
