@@ -42,7 +42,7 @@ export const FullPost = () => {
         title={post.items.title}
         imageUrl={
           post.items.imageUrl
-            ? `http://localhost:3001${post.items.imageUrl}`
+            ? `https://sinedviper-blog.herokuapp.com/${post.items.imageUrl}`
             : ""
         }
         user={post.items.user}

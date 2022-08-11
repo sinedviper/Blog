@@ -81,7 +81,7 @@ export const Home = () => {
                       title={obj.title}
                       imageUrl={
                         obj.imageUrl
-                          ? `http://localhost:3001${obj.imageUrl}`
+                          ? `https://sinedviper-blog.herokuapp.com/${obj.imageUrl}`
                           : ""
                       }
                       user={obj.user}
@@ -102,7 +102,9 @@ export const Home = () => {
                     key={obj._id}
                     title={obj.title}
                     imageUrl={
-                      obj.imageUrl ? `http://localhost:3001${obj.imageUrl}` : ""
+                      obj.imageUrl
+                        ? `https://sinedviper-blog.herokuapp.com/${obj.imageUrl}`
+                        : ""
                     }
                     user={obj.user}
                     createdAt={obj.createdAt}
